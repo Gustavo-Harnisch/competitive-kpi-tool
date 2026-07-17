@@ -1,0 +1,9 @@
+DRY RUN: no GitHub commands will be executed
+Repository: Gustavo-Harnisch/competitive-kpi-tool
+Project: Competitive KPI Tool — Roadmap
+Labels: 27
+Milestones: 6
+Fields: 12
+Issues selected: 2
+- CKT-021: Write complete user and developer documentation -> v1.0 Release
+- CKT-022: Create sample datasets and portfolio examples -> v1.0 Release

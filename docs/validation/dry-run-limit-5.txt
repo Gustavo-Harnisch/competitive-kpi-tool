@@ -1,0 +1,12 @@
+DRY RUN: no GitHub commands will be executed
+Repository: Gustavo-Harnisch/competitive-kpi-tool
+Project: Competitive KPI Tool — Roadmap
+Labels: 27
+Milestones: 6
+Fields: 12
+Issues selected: 5
+- CKT-001: Define product requirements and KPI semantics -> v0.1 Foundation
+- CKT-002: Create repository standards and contribution policy -> v0.1 Foundation
+- CKT-003: Design layered application architecture -> v0.1 Foundation
+- CKT-004: Create Lazarus desktop application skeleton -> v0.1 Foundation
+- CKT-005: Define SQLite schema and migration strategy -> v0.2 Data Layer

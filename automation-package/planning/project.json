@@ -1,0 +1,1758 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-07-16T18:30:00-04:00",
+  "owner": "Gustavo-Harnisch",
+  "repository": {
+    "name": "competitive-kpi-tool",
+    "description": "Local-first desktop KPI tracker for competitive programming practice, built with Lazarus, Object Pascal, and SQLite.",
+    "visibility": "public",
+    "homepage": "",
+    "topics": [
+      "object-pascal",
+      "lazarus",
+      "sqlite",
+      "competitive-programming",
+      "kpi",
+      "desktop-app",
+      "csv",
+      "portfolio",
+      "linux",
+      "windows",
+      "macos"
+    ],
+    "license": "MIT"
+  },
+  "project": {
+    "title": "Competitive KPI Tool — Roadmap",
+    "short_description": "24-week roadmap from empty repository to a tested local-first Lazarus desktop release.",
+    "readme": "Source of truth: automation-package/planning/project.json. The roadmap covers architecture, SQLite, KPI calculations, export, testing, security, CI, documentation, and v1.0 release preparation."
+  },
+  "fields": [
+    {
+      "name": "Status",
+      "type": "SINGLE_SELECT",
+      "options": [
+        "Backlog",
+        "Todo",
+        "In Progress",
+        "Blocked",
+        "In Review",
+        "Done"
+      ]
+    },
+    {
+      "name": "Priority",
+      "type": "SINGLE_SELECT",
+      "options": [
+        "P0",
+        "P1",
+        "P2",
+        "P3"
+      ]
+    },
+    {
+      "name": "Phase",
+      "type": "SINGLE_SELECT",
+      "options": [
+        "Foundation",
+        "Architecture",
+        "Data Layer",
+        "Core Implementation",
+        "UX and Integrations",
+        "Quality",
+        "Release"
+      ]
+    },
+    {
+      "name": "Module",
+      "type": "SINGLE_SELECT",
+      "options": [
+        "Architecture",
+        "CI",
+        "Database",
+        "Desktop UI",
+        "Documentation",
+        "Examples",
+        "Export",
+        "KPI Engine",
+        "Performance",
+        "Product",
+        "Release",
+        "Reminder",
+        "Repository",
+        "Security",
+        "Settings",
+        "Testing"
+      ]
+    },
+    {
+      "name": "Work type",
+      "type": "SINGLE_SELECT",
+      "options": [
+        "CI",
+        "Chore",
+        "Design",
+        "Documentation",
+        "Feature",
+        "Performance",
+        "Release",
+        "Security",
+        "Test"
+      ]
+    },
+    {
+      "name": "Track",
+      "type": "TEXT"
+    },
+    {
+      "name": "Complexity",
+      "type": "SINGLE_SELECT",
+      "options": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL"
+      ]
+    },
+    {
+      "name": "Estimate",
+      "type": "NUMBER"
+    },
+    {
+      "name": "Start date",
+      "type": "DATE"
+    },
+    {
+      "name": "Target date",
+      "type": "DATE"
+    },
+    {
+      "name": "Risk",
+      "type": "SINGLE_SELECT",
+      "options": [
+        "Low",
+        "Medium",
+        "High",
+        "Critical"
+      ]
+    },
+    {
+      "name": "Version",
+      "type": "SINGLE_SELECT",
+      "options": [
+        "v0.1",
+        "v0.2",
+        "v0.3",
+        "v0.4",
+        "v0.5",
+        "v1.0"
+      ]
+    }
+  ],
+  "views": [
+    {
+      "name": "Master Table",
+      "layout": "table",
+      "group_by": "Phase",
+      "sort": [
+        "Start date",
+        "Priority"
+      ]
+    },
+    {
+      "name": "Development Board",
+      "layout": "board",
+      "group_by": "Status",
+      "filter": "Work type:Feature,Chore,Design"
+    },
+    {
+      "name": "Roadmap",
+      "layout": "roadmap",
+      "start_field": "Start date",
+      "target_field": "Target date",
+      "group_by": "Phase"
+    },
+    {
+      "name": "Current Sprint",
+      "layout": "table",
+      "filter": "Status:Todo,In Progress,Blocked",
+      "sort": [
+        "Priority",
+        "Target date"
+      ]
+    },
+    {
+      "name": "Critical Work",
+      "layout": "table",
+      "filter": "Priority:P0 OR Risk:High,Critical"
+    },
+    {
+      "name": "Testing",
+      "layout": "board",
+      "filter": "Module:Testing OR Work type:Test"
+    },
+    {
+      "name": "Documentation",
+      "layout": "table",
+      "filter": "Module:Documentation OR Work type:Documentation"
+    },
+    {
+      "name": "Applications",
+      "layout": "table",
+      "filter": "Module:Desktop UI,Database,KPI Engine,Export,Reminder"
+    },
+    {
+      "name": "Release 1.0",
+      "layout": "table",
+      "filter": "Version:v1.0",
+      "sort": [
+        "Priority",
+        "Target date"
+      ]
+    }
+  ],
+  "labels": [
+    {
+      "name": "architecture",
+      "color": "1D76DB",
+      "description": "Planning label: architecture."
+    },
+    {
+      "name": "chore",
+      "color": "5319E7",
+      "description": "Planning label: chore."
+    },
+    {
+      "name": "ci",
+      "color": "0E8A16",
+      "description": "Planning label: ci."
+    },
+    {
+      "name": "core-implementation",
+      "color": "D93F0B",
+      "description": "Planning label: core-implementation."
+    },
+    {
+      "name": "data-layer",
+      "color": "FBCA04",
+      "description": "Planning label: data-layer."
+    },
+    {
+      "name": "database",
+      "color": "B60205",
+      "description": "Planning label: database."
+    },
+    {
+      "name": "design",
+      "color": "0052CC",
+      "description": "Planning label: design."
+    },
+    {
+      "name": "desktop-ui",
+      "color": "7057FF",
+      "description": "Planning label: desktop-ui."
+    },
+    {
+      "name": "documentation",
+      "color": "006B75",
+      "description": "Planning label: documentation."
+    },
+    {
+      "name": "examples",
+      "color": "C2E0C6",
+      "description": "Planning label: examples."
+    },
+    {
+      "name": "export",
+      "color": "F9D0C4",
+      "description": "Planning label: export."
+    },
+    {
+      "name": "feature",
+      "color": "D4C5F9",
+      "description": "Planning label: feature."
+    },
+    {
+      "name": "foundation",
+      "color": "1D76DB",
+      "description": "Planning label: foundation."
+    },
+    {
+      "name": "kpi-engine",
+      "color": "5319E7",
+      "description": "Planning label: kpi-engine."
+    },
+    {
+      "name": "p0",
+      "color": "0E8A16",
+      "description": "Planning label: p0."
+    },
+    {
+      "name": "p1",
+      "color": "D93F0B",
+      "description": "Planning label: p1."
+    },
+    {
+      "name": "performance",
+      "color": "FBCA04",
+      "description": "Planning label: performance."
+    },
+    {
+      "name": "product",
+      "color": "B60205",
+      "description": "Planning label: product."
+    },
+    {
+      "name": "quality",
+      "color": "0052CC",
+      "description": "Planning label: quality."
+    },
+    {
+      "name": "release",
+      "color": "7057FF",
+      "description": "Planning label: release."
+    },
+    {
+      "name": "reminder",
+      "color": "006B75",
+      "description": "Planning label: reminder."
+    },
+    {
+      "name": "repository",
+      "color": "C2E0C6",
+      "description": "Planning label: repository."
+    },
+    {
+      "name": "security",
+      "color": "F9D0C4",
+      "description": "Planning label: security."
+    },
+    {
+      "name": "settings",
+      "color": "D4C5F9",
+      "description": "Planning label: settings."
+    },
+    {
+      "name": "test",
+      "color": "1D76DB",
+      "description": "Planning label: test."
+    },
+    {
+      "name": "testing",
+      "color": "5319E7",
+      "description": "Planning label: testing."
+    },
+    {
+      "name": "ux-and-integrations",
+      "color": "0E8A16",
+      "description": "Planning label: ux-and-integrations."
+    }
+  ],
+  "milestones": [
+    {
+      "title": "v0.1 Foundation",
+      "description": "Repository, requirements, architecture, and runnable desktop skeleton.",
+      "due_on": "2026-08-16T23:59:59Z"
+    },
+    {
+      "title": "v0.2 Data Layer",
+      "description": "SQLite schema, transactions, session repository, and settings.",
+      "due_on": "2026-09-13T23:59:59Z"
+    },
+    {
+      "title": "v0.3 Core KPI",
+      "description": "KPI calculations, dashboard, streaks, and validated session entry.",
+      "due_on": "2026-10-11T23:59:59Z"
+    },
+    {
+      "title": "v0.4 UX and Integrations",
+      "description": "History management, CSV/SQL export, and reminders.",
+      "due_on": "2026-11-08T23:59:59Z"
+    },
+    {
+      "title": "v0.5 Quality",
+      "description": "Automated tests, CI, security hardening, and performance evidence.",
+      "due_on": "2026-12-06T23:59:59Z"
+    },
+    {
+      "title": "v1.0 Release",
+      "description": "Documentation, examples, cross-platform packaging, and release review.",
+      "due_on": "2027-01-03T23:59:59Z"
+    }
+  ],
+  "issues": [
+    {
+      "key": "CKT-001",
+      "title": "Define product requirements and KPI semantics",
+      "objective": "Define the exact behavior of goals, streaks, completion rates, and practice sessions.",
+      "context": "The repository has no implementation. Stable definitions prevent later database and UI rework.",
+      "tasks": [
+        "Document user personas and primary workflows",
+        "Define daily goal, weekly average, streak, and completion formulas",
+        "Record assumptions and edge cases"
+      ],
+      "acceptance": [
+        "Every KPI has an unambiguous formula",
+        "Edge cases for zero activity and missed days are documented",
+        "Scope and non-goals are approved"
+      ],
+      "files": [
+        "docs/product-requirements.md",
+        "docs/kpi-specification.md"
+      ],
+      "depends_on": [],
+      "risks": [
+        "Definitions may not reflect real practice habits"
+      ],
+      "tests": [
+        "Peer review against sample data"
+      ],
+      "documentation": [
+        "Update README scope"
+      ],
+      "milestone": "v0.1 Foundation",
+      "labels": [
+        "foundation",
+        "product",
+        "documentation",
+        "p0"
+      ],
+      "fields": {
+        "Status": "Todo",
+        "Priority": "P0",
+        "Phase": "Foundation",
+        "Module": "Product",
+        "Work type": "Documentation",
+        "Track": "Core product",
+        "Complexity": "S",
+        "Estimate": 4,
+        "Start date": "2026-07-20",
+        "Target date": "2026-07-26",
+        "Risk": "Low",
+        "Version": "v0.1"
+      },
+      "body": "## Objective\nDefine the exact behavior of goals, streaks, completion rates, and practice sessions.\n\n## Context\nThe repository has no implementation. Stable definitions prevent later database and UI rework.\n\n## Tasks\n- [ ] Document user personas and primary workflows\n- [ ] Define daily goal, weekly average, streak, and completion formulas\n- [ ] Record assumptions and edge cases\n\n## Acceptance criteria\n- [ ] Every KPI has an unambiguous formula\n- [ ] Edge cases for zero activity and missed days are documented\n- [ ] Scope and non-goals are approved\n\n## Files affected\n- `docs/product-requirements.md`\n- `docs/kpi-specification.md`\n\n## Dependencies\nNone\n\n## Risks\n- Definitions may not reflect real practice habits\n\n## Tests\n- Peer review against sample data\n\n## Documentation\n- Update README scope\n\n## Planning\n- Estimate: 4 hours\n- Priority: P0\n- Complexity: S\n- Risk: Low\n- Start date: 2026-07-20\n- Target date: 2026-07-26\n- Milestone: v0.1 Foundation\n"
+    },
+    {
+      "key": "CKT-002",
+      "title": "Create repository standards and contribution policy",
+      "objective": "Establish maintainable repository conventions for code, documentation, commits, and releases.",
+      "context": "The project is intended for education, portfolio review, and future contributors.",
+      "tasks": [
+        "Add license, editor settings, and ignore rules",
+        "Define branch and commit conventions",
+        "Create contribution and code-of-conduct documents"
+      ],
+      "acceptance": [
+        "Repository metadata is complete",
+        "Generated files and local databases are ignored",
+        "A contributor can understand the workflow"
+      ],
+      "files": [
+        "LICENSE",
+        ".gitignore",
+        ".editorconfig",
+        "CONTRIBUTING.md",
+        "CODE_OF_CONDUCT.md"
+      ],
+      "depends_on": [
+        "CKT-001"
+      ],
+      "risks": [
+        "Overly complex process for a small project"
+      ],
+      "tests": [
+        "Validate line endings and ignore rules"
+      ],
+      "documentation": [
+        "Document development workflow"
+      ],
+      "milestone": "v0.1 Foundation",
+      "labels": [
+        "foundation",
+        "repository",
+        "chore",
+        "p0"
+      ],
+      "fields": {
+        "Status": "Todo",
+        "Priority": "P0",
+        "Phase": "Foundation",
+        "Module": "Repository",
+        "Work type": "Chore",
+        "Track": "Core product",
+        "Complexity": "S",
+        "Estimate": 4,
+        "Start date": "2026-07-27",
+        "Target date": "2026-08-02",
+        "Risk": "Low",
+        "Version": "v0.1"
+      },
+      "body": "## Objective\nEstablish maintainable repository conventions for code, documentation, commits, and releases.\n\n## Context\nThe project is intended for education, portfolio review, and future contributors.\n\n## Tasks\n- [ ] Add license, editor settings, and ignore rules\n- [ ] Define branch and commit conventions\n- [ ] Create contribution and code-of-conduct documents\n\n## Acceptance criteria\n- [ ] Repository metadata is complete\n- [ ] Generated files and local databases are ignored\n- [ ] A contributor can understand the workflow\n\n## Files affected\n- `LICENSE`\n- `.gitignore`\n- `.editorconfig`\n- `CONTRIBUTING.md`\n- `CODE_OF_CONDUCT.md`\n\n## Dependencies\nCKT-001\n\n## Risks\n- Overly complex process for a small project\n\n## Tests\n- Validate line endings and ignore rules\n\n## Documentation\n- Document development workflow\n\n## Planning\n- Estimate: 4 hours\n- Priority: P0\n- Complexity: S\n- Risk: Low\n- Start date: 2026-07-27\n- Target date: 2026-08-02\n- Milestone: v0.1 Foundation\n"
+    },
+    {
+      "key": "CKT-003",
+      "title": "Design layered application architecture",
+      "objective": "Define clear UI, service, domain, and data boundaries for the Lazarus application.",
+      "context": "A layered design keeps SQLite, exports, and future integrations replaceable.",
+      "tasks": [
+        "Define modules and dependency direction",
+        "Document public and private interfaces",
+        "Define error and logging strategy"
+      ],
+      "acceptance": [
+        "UI does not contain SQL",
+        "Domain calculations can be tested independently",
+        "Architecture decision records capture trade-offs"
+      ],
+      "files": [
+        "docs/architecture.md",
+        "docs/adr/0001-layered-architecture.md"
+      ],
+      "depends_on": [
+        "CKT-001"
+      ],
+      "risks": [
+        "Architecture may be too ambitious for owner level"
+      ],
+      "tests": [
+        "Review dependency graph"
+      ],
+      "documentation": [
+        "Create architecture diagram"
+      ],
+      "milestone": "v0.1 Foundation",
+      "labels": [
+        "architecture",
+        "architecture",
+        "design",
+        "p0"
+      ],
+      "fields": {
+        "Status": "Todo",
+        "Priority": "P0",
+        "Phase": "Architecture",
+        "Module": "Architecture",
+        "Work type": "Design",
+        "Track": "Core product",
+        "Complexity": "M",
+        "Estimate": 4,
+        "Start date": "2026-08-03",
+        "Target date": "2026-08-09",
+        "Risk": "Medium",
+        "Version": "v0.1"
+      },
+      "body": "## Objective\nDefine clear UI, service, domain, and data boundaries for the Lazarus application.\n\n## Context\nA layered design keeps SQLite, exports, and future integrations replaceable.\n\n## Tasks\n- [ ] Define modules and dependency direction\n- [ ] Document public and private interfaces\n- [ ] Define error and logging strategy\n\n## Acceptance criteria\n- [ ] UI does not contain SQL\n- [ ] Domain calculations can be tested independently\n- [ ] Architecture decision records capture trade-offs\n\n## Files affected\n- `docs/architecture.md`\n- `docs/adr/0001-layered-architecture.md`\n\n## Dependencies\nCKT-001\n\n## Risks\n- Architecture may be too ambitious for owner level\n\n## Tests\n- Review dependency graph\n\n## Documentation\n- Create architecture diagram\n\n## Planning\n- Estimate: 4 hours\n- Priority: P0\n- Complexity: M\n- Risk: Medium\n- Start date: 2026-08-03\n- Target date: 2026-08-09\n- Milestone: v0.1 Foundation\n"
+    },
+    {
+      "key": "CKT-004",
+      "title": "Create Lazarus desktop application skeleton",
+      "objective": "Create a cross-platform Lazarus application that opens and displays the main dashboard.",
+      "context": "The starter must run locally on desktop systems without network access.",
+      "tasks": [
+        "Create .lpr and Lazarus project metadata",
+        "Add programmatic main form",
+        "Add application data directory helper"
+      ],
+      "acceptance": [
+        "Project opens in Lazarus",
+        "Main form starts without external services",
+        "Application data path is platform-safe"
+      ],
+      "files": [
+        "src/competitive_kpi_tool.lpr",
+        "src/competitive_kpi_tool.lpi",
+        "src/ui/main_form.pas",
+        "src/core/app_paths.pas"
+      ],
+      "depends_on": [
+        "CKT-003"
+      ],
+      "risks": [
+        "LCL widget differences across platforms"
+      ],
+      "tests": [
+        "Build on Linux",
+        "Manual startup smoke test"
+      ],
+      "documentation": [
+        "Add build instructions"
+      ],
+      "milestone": "v0.1 Foundation",
+      "labels": [
+        "architecture",
+        "desktop-ui",
+        "feature",
+        "p0"
+      ],
+      "fields": {
+        "Status": "Todo",
+        "Priority": "P0",
+        "Phase": "Architecture",
+        "Module": "Desktop UI",
+        "Work type": "Feature",
+        "Track": "Core product",
+        "Complexity": "M",
+        "Estimate": 4,
+        "Start date": "2026-08-10",
+        "Target date": "2026-08-16",
+        "Risk": "Medium",
+        "Version": "v0.1"
+      },
+      "body": "## Objective\nCreate a cross-platform Lazarus application that opens and displays the main dashboard.\n\n## Context\nThe starter must run locally on desktop systems without network access.\n\n## Tasks\n- [ ] Create .lpr and Lazarus project metadata\n- [ ] Add programmatic main form\n- [ ] Add application data directory helper\n\n## Acceptance criteria\n- [ ] Project opens in Lazarus\n- [ ] Main form starts without external services\n- [ ] Application data path is platform-safe\n\n## Files affected\n- `src/competitive_kpi_tool.lpr`\n- `src/competitive_kpi_tool.lpi`\n- `src/ui/main_form.pas`\n- `src/core/app_paths.pas`\n\n## Dependencies\nCKT-003\n\n## Risks\n- LCL widget differences across platforms\n\n## Tests\n- Build on Linux\n- Manual startup smoke test\n\n## Documentation\n- Add build instructions\n\n## Planning\n- Estimate: 4 hours\n- Priority: P0\n- Complexity: M\n- Risk: Medium\n- Start date: 2026-08-10\n- Target date: 2026-08-16\n- Milestone: v0.1 Foundation\n"
+    },
+    {
+      "key": "CKT-005",
+      "title": "Define SQLite schema and migration strategy",
+      "objective": "Design a normalized local schema for settings and practice sessions.",
+      "context": "The database is the source of truth and must support reliable export and future evolution.",
+      "tasks": [
+        "Define tables, constraints, and indexes",
+        "Add schema version table",
+        "Document migration transaction rules"
+      ],
+      "acceptance": [
+        "Schema prevents invalid negative values",
+        "Dates use ISO-8601",
+        "Migrations are repeatable and transactional"
+      ],
+      "files": [
+        "src/data/kpi_database.pas",
+        "docs/database-schema.md"
+      ],
+      "depends_on": [
+        "CKT-003"
+      ],
+      "risks": [
+        "Schema changes can make old data unreadable"
+      ],
+      "tests": [
+        "Create fresh database",
+        "Reopen existing database"
+      ],
+      "documentation": [
+        "Add ER diagram"
+      ],
+      "milestone": "v0.2 Data Layer",
+      "labels": [
+        "data-layer",
+        "database",
+        "design",
+        "p0"
+      ],
+      "fields": {
+        "Status": "Todo",
+        "Priority": "P0",
+        "Phase": "Data Layer",
+        "Module": "Database",
+        "Work type": "Design",
+        "Track": "Core product",
+        "Complexity": "M",
+        "Estimate": 4,
+        "Start date": "2026-08-17",
+        "Target date": "2026-08-23",
+        "Risk": "Medium",
+        "Version": "v0.2"
+      },
+      "body": "## Objective\nDesign a normalized local schema for settings and practice sessions.\n\n## Context\nThe database is the source of truth and must support reliable export and future evolution.\n\n## Tasks\n- [ ] Define tables, constraints, and indexes\n- [ ] Add schema version table\n- [ ] Document migration transaction rules\n\n## Acceptance criteria\n- [ ] Schema prevents invalid negative values\n- [ ] Dates use ISO-8601\n- [ ] Migrations are repeatable and transactional\n\n## Files affected\n- `src/data/kpi_database.pas`\n- `docs/database-schema.md`\n\n## Dependencies\nCKT-003\n\n## Risks\n- Schema changes can make old data unreadable\n\n## Tests\n- Create fresh database\n- Reopen existing database\n\n## Documentation\n- Add ER diagram\n\n## Planning\n- Estimate: 4 hours\n- Priority: P0\n- Complexity: M\n- Risk: Medium\n- Start date: 2026-08-17\n- Target date: 2026-08-23\n- Milestone: v0.2 Data Layer\n"
+    },
+    {
+      "key": "CKT-006",
+      "title": "Implement SQLite connection and initialization",
+      "objective": "Implement safe database creation, connection lifecycle, transactions, and schema initialization.",
+      "context": "Local-first reliability depends on correct transaction and resource handling.",
+      "tasks": [
+        "Create connection wrapper",
+        "Initialize schema in a transaction",
+        "Return clear error messages"
+      ],
+      "acceptance": [
+        "Database is created on first run",
+        "Repeated initialization is idempotent",
+        "Connections and queries are freed"
+      ],
+      "files": [
+        "src/data/kpi_database.pas"
+      ],
+      "depends_on": [
+        "CKT-005",
+        "CKT-004"
+      ],
+      "risks": [
+        "SQLite package availability differs by installation"
+      ],
+      "tests": [
+        "Fresh database test",
+        "Repeated startup test",
+        "Invalid path test"
+      ],
+      "documentation": [
+        "Document Lazarus SQLite package requirements"
+      ],
+      "milestone": "v0.2 Data Layer",
+      "labels": [
+        "data-layer",
+        "database",
+        "feature",
+        "p0"
+      ],
+      "fields": {
+        "Status": "Todo",
+        "Priority": "P0",
+        "Phase": "Data Layer",
+        "Module": "Database",
+        "Work type": "Feature",
+        "Track": "Core product",
+        "Complexity": "M",
+        "Estimate": 4,
+        "Start date": "2026-08-24",
+        "Target date": "2026-08-30",
+        "Risk": "Medium",
+        "Version": "v0.2"
+      },
+      "body": "## Objective\nImplement safe database creation, connection lifecycle, transactions, and schema initialization.\n\n## Context\nLocal-first reliability depends on correct transaction and resource handling.\n\n## Tasks\n- [ ] Create connection wrapper\n- [ ] Initialize schema in a transaction\n- [ ] Return clear error messages\n\n## Acceptance criteria\n- [ ] Database is created on first run\n- [ ] Repeated initialization is idempotent\n- [ ] Connections and queries are freed\n\n## Files affected\n- `src/data/kpi_database.pas`\n\n## Dependencies\nCKT-005, CKT-004\n\n## Risks\n- SQLite package availability differs by installation\n\n## Tests\n- Fresh database test\n- Repeated startup test\n- Invalid path test\n\n## Documentation\n- Document Lazarus SQLite package requirements\n\n## Planning\n- Estimate: 4 hours\n- Priority: P0\n- Complexity: M\n- Risk: Medium\n- Start date: 2026-08-24\n- Target date: 2026-08-30\n- Milestone: v0.2 Data Layer\n"
+    },
+    {
+      "key": "CKT-007",
+      "title": "Implement practice session repository operations",
+      "objective": "Add create, read, update, and delete operations for practice sessions.",
+      "context": "Session records are the basis of every KPI and export.",
+      "tasks": [
+        "Insert validated sessions",
+        "List recent sessions",
+        "Add update and delete methods",
+        "Use parameterized SQL"
+      ],
+      "acceptance": [
+        "No SQL is built from user-controlled strings",
+        "CRUD operations preserve data integrity",
+        "Recent sessions are ordered deterministically"
+      ],
+      "files": [
+        "src/data/kpi_database.pas",
+        "src/core/kpi_types.pas"
+      ],
+      "depends_on": [
+        "CKT-006"
+      ],
+      "risks": [
+        "Incorrect date conversion can affect KPI results"
+      ],
+      "tests": [
+        "CRUD integration tests",
+        "Special-character notes test"
+      ],
+      "documentation": [
+        "Document data model"
+      ],
+      "milestone": "v0.2 Data Layer",
+      "labels": [
+        "data-layer",
+        "database",
+        "feature",
+        "p0"
+      ],
+      "fields": {
+        "Status": "Todo",
+        "Priority": "P0",
+        "Phase": "Data Layer",
+        "Module": "Database",
+        "Work type": "Feature",
+        "Track": "Core product",
+        "Complexity": "M",
+        "Estimate": 4,
+        "Start date": "2026-08-31",
+        "Target date": "2026-09-06",
+        "Risk": "Medium",
+        "Version": "v0.2"
+      },
+      "body": "## Objective\nAdd create, read, update, and delete operations for practice sessions.\n\n## Context\nSession records are the basis of every KPI and export.\n\n## Tasks\n- [ ] Insert validated sessions\n- [ ] List recent sessions\n- [ ] Add update and delete methods\n- [ ] Use parameterized SQL\n\n## Acceptance criteria\n- [ ] No SQL is built from user-controlled strings\n- [ ] CRUD operations preserve data integrity\n- [ ] Recent sessions are ordered deterministically\n\n## Files affected\n- `src/data/kpi_database.pas`\n- `src/core/kpi_types.pas`\n\n## Dependencies\nCKT-006\n\n## Risks\n- Incorrect date conversion can affect KPI results\n\n## Tests\n- CRUD integration tests\n- Special-character notes test\n\n## Documentation\n- Document data model\n\n## Planning\n- Estimate: 4 hours\n- Priority: P0\n- Complexity: M\n- Risk: Medium\n- Start date: 2026-08-31\n- Target date: 2026-09-06\n- Milestone: v0.2 Data Layer\n"
+    },
+    {
+      "key": "CKT-008",
+      "title": "Add settings persistence and configurable daily goal",
+      "objective": "Persist the user's daily problem goal and reminder preference.",
+      "context": "A configurable goal is required for meaningful completion metrics.",
+      "tasks": [
+        "Create settings record",
+        "Load defaults on first run",
+        "Validate goal range",
+        "Add settings UI"
+      ],
+      "acceptance": [
+        "Goal persists across restarts",
+        "Invalid values cannot be saved",
+        "Default goal is documented"
+      ],
+      "files": [
+        "src/data/kpi_database.pas",
+        "src/ui/settings_form.pas"
+      ],
+      "depends_on": [
+        "CKT-006"
+      ],
+      "risks": [
+        "Too many settings can complicate the first release"
+      ],
+      "tests": [
+        "Default settings test",
+        "Persistence test"
+      ],
+      "documentation": [
+        "Add settings section to user guide"
+      ],
+      "milestone": "v0.2 Data Layer",
+      "labels": [
+        "data-layer",
+        "settings",
+        "feature",
+        "p1"
+      ],
+      "fields": {
+        "Status": "Todo",
+        "Priority": "P1",
+        "Phase": "Data Layer",
+        "Module": "Settings",
+        "Work type": "Feature",
+        "Track": "Core product",
+        "Complexity": "S",
+        "Estimate": 4,
+        "Start date": "2026-09-07",
+        "Target date": "2026-09-13",
+        "Risk": "Low",
+        "Version": "v0.2"
+      },
+      "body": "## Objective\nPersist the user's daily problem goal and reminder preference.\n\n## Context\nA configurable goal is required for meaningful completion metrics.\n\n## Tasks\n- [ ] Create settings record\n- [ ] Load defaults on first run\n- [ ] Validate goal range\n- [ ] Add settings UI\n\n## Acceptance criteria\n- [ ] Goal persists across restarts\n- [ ] Invalid values cannot be saved\n- [ ] Default goal is documented\n\n## Files affected\n- `src/data/kpi_database.pas`\n- `src/ui/settings_form.pas`\n\n## Dependencies\nCKT-006\n\n## Risks\n- Too many settings can complicate the first release\n\n## Tests\n- Default settings test\n- Persistence test\n\n## Documentation\n- Add settings section to user guide\n\n## Planning\n- Estimate: 4 hours\n- Priority: P1\n- Complexity: S\n- Risk: Low\n- Start date: 2026-09-07\n- Target date: 2026-09-13\n- Milestone: v0.2 Data Layer\n"
+    },
+    {
+      "key": "CKT-009",
+      "title": "Implement KPI calculation library",
+      "objective": "Implement pure functions for completion rate, average solved problems, and trend calculations.",
+      "context": "Pure functions are easier to verify than calculations embedded in SQL or UI code.",
+      "tasks": [
+        "Implement completion percentage",
+        "Implement rolling averages",
+        "Define rounding behavior",
+        "Handle empty samples"
+      ],
+      "acceptance": [
+        "Functions have no UI or database dependency",
+        "Division-by-zero is handled",
+        "Results match specification examples"
+      ],
+      "files": [
+        "src/core/kpi_calculator.pas",
+        "tests/test_kpi_calculator.pas"
+      ],
+      "depends_on": [
+        "CKT-001",
+        "CKT-003"
+      ],
+      "risks": [
+        "Rounding rules can create misleading displays"
+      ],
+      "tests": [
+        "Boundary-value unit tests",
+        "Known sample tests"
+      ],
+      "documentation": [
+        "Document formulas"
+      ],
+      "milestone": "v0.3 Core KPI",
+      "labels": [
+        "core-implementation",
+        "kpi-engine",
+        "feature",
+        "p0"
+      ],
+      "fields": {
+        "Status": "Todo",
+        "Priority": "P0",
+        "Phase": "Core Implementation",
+        "Module": "KPI Engine",
+        "Work type": "Feature",
+        "Track": "Core product",
+        "Complexity": "M",
+        "Estimate": 4,
+        "Start date": "2026-09-14",
+        "Target date": "2026-09-20",
+        "Risk": "Medium",
+        "Version": "v0.3"
+      },
+      "body": "## Objective\nImplement pure functions for completion rate, average solved problems, and trend calculations.\n\n## Context\nPure functions are easier to verify than calculations embedded in SQL or UI code.\n\n## Tasks\n- [ ] Implement completion percentage\n- [ ] Implement rolling averages\n- [ ] Define rounding behavior\n- [ ] Handle empty samples\n\n## Acceptance criteria\n- [ ] Functions have no UI or database dependency\n- [ ] Division-by-zero is handled\n- [ ] Results match specification examples\n\n## Files affected\n- `src/core/kpi_calculator.pas`\n- `tests/test_kpi_calculator.pas`\n\n## Dependencies\nCKT-001, CKT-003\n\n## Risks\n- Rounding rules can create misleading displays\n\n## Tests\n- Boundary-value unit tests\n- Known sample tests\n\n## Documentation\n- Document formulas\n\n## Planning\n- Estimate: 4 hours\n- Priority: P0\n- Complexity: M\n- Risk: Medium\n- Start date: 2026-09-14\n- Target date: 2026-09-20\n- Milestone: v0.3 Core KPI\n"
+    },
+    {
+      "key": "CKT-010",
+      "title": "Implement current streak calculation",
+      "objective": "Calculate the current consecutive practice-day streak using local dates.",
+      "context": "Streak logic must be explicit about an incomplete current day and local time boundaries.",
+      "tasks": [
+        "Implement streak query",
+        "Allow today to remain incomplete until day end",
+        "Add deterministic date tests"
+      ],
+      "acceptance": [
+        "Yesterday-based active streak is preserved when today is incomplete",
+        "A missed full day ends the streak",
+        "Tests cover month and year boundaries"
+      ],
+      "files": [
+        "src/data/kpi_database.pas",
+        "tests/test_streaks.pas"
+      ],
+      "depends_on": [
+        "CKT-007",
+        "CKT-009"
+      ],
+      "risks": [
+        "Timezone interpretation can surprise users"
+      ],
+      "tests": [
+        "Month-boundary test",
+        "Leap-year test",
+        "No-session test"
+      ],
+      "documentation": [
+        "Explain streak semantics"
+      ],
+      "milestone": "v0.3 Core KPI",
+      "labels": [
+        "core-implementation",
+        "kpi-engine",
+        "feature",
+        "p0"
+      ],
+      "fields": {
+        "Status": "Todo",
+        "Priority": "P0",
+        "Phase": "Core Implementation",
+        "Module": "KPI Engine",
+        "Work type": "Feature",
+        "Track": "Core product",
+        "Complexity": "M",
+        "Estimate": 4,
+        "Start date": "2026-09-21",
+        "Target date": "2026-09-27",
+        "Risk": "Medium",
+        "Version": "v0.3"
+      },
+      "body": "## Objective\nCalculate the current consecutive practice-day streak using local dates.\n\n## Context\nStreak logic must be explicit about an incomplete current day and local time boundaries.\n\n## Tasks\n- [ ] Implement streak query\n- [ ] Allow today to remain incomplete until day end\n- [ ] Add deterministic date tests\n\n## Acceptance criteria\n- [ ] Yesterday-based active streak is preserved when today is incomplete\n- [ ] A missed full day ends the streak\n- [ ] Tests cover month and year boundaries\n\n## Files affected\n- `src/data/kpi_database.pas`\n- `tests/test_streaks.pas`\n\n## Dependencies\nCKT-007, CKT-009\n\n## Risks\n- Timezone interpretation can surprise users\n\n## Tests\n- Month-boundary test\n- Leap-year test\n- No-session test\n\n## Documentation\n- Explain streak semantics\n\n## Planning\n- Estimate: 4 hours\n- Priority: P0\n- Complexity: M\n- Risk: Medium\n- Start date: 2026-09-21\n- Target date: 2026-09-27\n- Milestone: v0.3 Core KPI\n"
+    },
+    {
+      "key": "CKT-011",
+      "title": "Build dashboard KPI summary",
+      "objective": "Display today's progress, seven-day average, total sessions, and current streak.",
+      "context": "The dashboard is the primary feedback loop for daily practice.",
+      "tasks": [
+        "Create KPI cards",
+        "Refresh after data changes",
+        "Show goal completion clearly",
+        "Handle database errors without crashing"
+      ],
+      "acceptance": [
+        "Dashboard updates immediately after save",
+        "Empty database has useful zero state",
+        "All values include units"
+      ],
+      "files": [
+        "src/ui/main_form.pas",
+        "src/core/kpi_calculator.pas"
+      ],
+      "depends_on": [
+        "CKT-009",
+        "CKT-010"
+      ],
+      "risks": [
+        "Dense UI may reduce clarity"
+      ],
+      "tests": [
+        "Manual empty-state test",
+        "Save-and-refresh test"
+      ],
+      "documentation": [
+        "Add dashboard screenshot placeholder"
+      ],
+      "milestone": "v0.3 Core KPI",
+      "labels": [
+        "core-implementation",
+        "desktop-ui",
+        "feature",
+        "p0"
+      ],
+      "fields": {
+        "Status": "Todo",
+        "Priority": "P0",
+        "Phase": "Core Implementation",
+        "Module": "Desktop UI",
+        "Work type": "Feature",
+        "Track": "Core product",
+        "Complexity": "M",
+        "Estimate": 4,
+        "Start date": "2026-09-28",
+        "Target date": "2026-10-04",
+        "Risk": "Medium",
+        "Version": "v0.3"
+      },
+      "body": "## Objective\nDisplay today's progress, seven-day average, total sessions, and current streak.\n\n## Context\nThe dashboard is the primary feedback loop for daily practice.\n\n## Tasks\n- [ ] Create KPI cards\n- [ ] Refresh after data changes\n- [ ] Show goal completion clearly\n- [ ] Handle database errors without crashing\n\n## Acceptance criteria\n- [ ] Dashboard updates immediately after save\n- [ ] Empty database has useful zero state\n- [ ] All values include units\n\n## Files affected\n- `src/ui/main_form.pas`\n- `src/core/kpi_calculator.pas`\n\n## Dependencies\nCKT-009, CKT-010\n\n## Risks\n- Dense UI may reduce clarity\n\n## Tests\n- Manual empty-state test\n- Save-and-refresh test\n\n## Documentation\n- Add dashboard screenshot placeholder\n\n## Planning\n- Estimate: 4 hours\n- Priority: P0\n- Complexity: M\n- Risk: Medium\n- Start date: 2026-09-28\n- Target date: 2026-10-04\n- Milestone: v0.3 Core KPI\n"
+    },
+    {
+      "key": "CKT-012",
+      "title": "Implement session entry and validation workflow",
+      "objective": "Allow users to record date, platform, solved problems, practice minutes, and notes.",
+      "context": "Fast, safe data entry is essential for consistent usage.",
+      "tasks": [
+        "Create form controls",
+        "Validate ISO date and numeric ranges",
+        "Provide actionable validation messages",
+        "Reset inputs after save"
+      ],
+      "acceptance": [
+        "Invalid values never reach the database",
+        "Keyboard-only entry is possible",
+        "Successful save refreshes dashboard and history"
+      ],
+      "files": [
+        "src/ui/main_form.pas",
+        "src/data/kpi_database.pas"
+      ],
+      "depends_on": [
+        "CKT-007",
+        "CKT-011"
+      ],
+      "risks": [
+        "Manual date entry can cause formatting errors"
+      ],
+      "tests": [
+        "Valid entry test",
+        "Invalid date test",
+        "Negative value test"
+      ],
+      "documentation": [
+        "Document session fields"
+      ],
+      "milestone": "v0.3 Core KPI",
+      "labels": [
+        "core-implementation",
+        "desktop-ui",
+        "feature",
+        "p0"
+      ],
+      "fields": {
+        "Status": "Todo",
+        "Priority": "P0",
+        "Phase": "Core Implementation",
+        "Module": "Desktop UI",
+        "Work type": "Feature",
+        "Track": "Core product",
+        "Complexity": "M",
+        "Estimate": 4,
+        "Start date": "2026-10-05",
+        "Target date": "2026-10-11",
+        "Risk": "Medium",
+        "Version": "v0.3"
+      },
+      "body": "## Objective\nAllow users to record date, platform, solved problems, practice minutes, and notes.\n\n## Context\nFast, safe data entry is essential for consistent usage.\n\n## Tasks\n- [ ] Create form controls\n- [ ] Validate ISO date and numeric ranges\n- [ ] Provide actionable validation messages\n- [ ] Reset inputs after save\n\n## Acceptance criteria\n- [ ] Invalid values never reach the database\n- [ ] Keyboard-only entry is possible\n- [ ] Successful save refreshes dashboard and history\n\n## Files affected\n- `src/ui/main_form.pas`\n- `src/data/kpi_database.pas`\n\n## Dependencies\nCKT-007, CKT-011\n\n## Risks\n- Manual date entry can cause formatting errors\n\n## Tests\n- Valid entry test\n- Invalid date test\n- Negative value test\n\n## Documentation\n- Document session fields\n\n## Planning\n- Estimate: 4 hours\n- Priority: P0\n- Complexity: M\n- Risk: Medium\n- Start date: 2026-10-05\n- Target date: 2026-10-11\n- Milestone: v0.3 Core KPI\n"
+    },
+    {
+      "key": "CKT-013",
+      "title": "Add recent activity table and record management",
+      "objective": "Display recent sessions and support correction or deletion of mistakes.",
+      "context": "Users need visibility and control over locally stored data.",
+      "tasks": [
+        "Populate recent session grid",
+        "Add selected-record delete action",
+        "Add edit workflow",
+        "Confirm destructive operations"
+      ],
+      "acceptance": [
+        "Recent activity is sorted newest first",
+        "Deletion requires confirmation",
+        "Editing preserves record identity"
+      ],
+      "files": [
+        "src/ui/main_form.pas",
+        "src/ui/session_form.pas"
+      ],
+      "depends_on": [
+        "CKT-007",
+        "CKT-012"
+      ],
+      "risks": [
+        "Accidental deletion can reduce trust"
+      ],
+      "tests": [
+        "Edit round-trip test",
+        "Delete confirmation test"
+      ],
+      "documentation": [
+        "Add record management guide"
+      ],
+      "milestone": "v0.4 UX and Integrations",
+      "labels": [
+        "ux-and-integrations",
+        "desktop-ui",
+        "feature",
+        "p1"
+      ],
+      "fields": {
+        "Status": "Todo",
+        "Priority": "P1",
+        "Phase": "UX and Integrations",
+        "Module": "Desktop UI",
+        "Work type": "Feature",
+        "Track": "Core product",
+        "Complexity": "M",
+        "Estimate": 4,
+        "Start date": "2026-10-12",
+        "Target date": "2026-10-18",
+        "Risk": "Medium",
+        "Version": "v0.4"
+      },
+      "body": "## Objective\nDisplay recent sessions and support correction or deletion of mistakes.\n\n## Context\nUsers need visibility and control over locally stored data.\n\n## Tasks\n- [ ] Populate recent session grid\n- [ ] Add selected-record delete action\n- [ ] Add edit workflow\n- [ ] Confirm destructive operations\n\n## Acceptance criteria\n- [ ] Recent activity is sorted newest first\n- [ ] Deletion requires confirmation\n- [ ] Editing preserves record identity\n\n## Files affected\n- `src/ui/main_form.pas`\n- `src/ui/session_form.pas`\n\n## Dependencies\nCKT-007, CKT-012\n\n## Risks\n- Accidental deletion can reduce trust\n\n## Tests\n- Edit round-trip test\n- Delete confirmation test\n\n## Documentation\n- Add record management guide\n\n## Planning\n- Estimate: 4 hours\n- Priority: P1\n- Complexity: M\n- Risk: Medium\n- Start date: 2026-10-12\n- Target date: 2026-10-18\n- Milestone: v0.4 UX and Integrations\n"
+    },
+    {
+      "key": "CKT-014",
+      "title": "Implement RFC 4180 compatible CSV export",
+      "objective": "Export all session data to a spreadsheet-friendly CSV file.",
+      "context": "CSV demonstrates data portability and enables analysis in Excel or LibreOffice.",
+      "tasks": [
+        "Write header row",
+        "Escape commas, quotes, and line breaks",
+        "Use UTF-8",
+        "Export dates in ISO-8601"
+      ],
+      "acceptance": [
+        "CSV opens correctly in LibreOffice",
+        "Quotes and multiline notes round-trip",
+        "Export does not modify database state"
+      ],
+      "files": [
+        "src/services/export_service.pas",
+        "tests/test_csv_export.pas"
+      ],
+      "depends_on": [
+        "CKT-007"
+      ],
+      "risks": [
+        "Spreadsheet locale may expect semicolon separators"
+      ],
+      "tests": [
+        "Golden-file export test",
+        "Unicode test"
+      ],
+      "documentation": [
+        "Document import settings for Excel and LibreOffice"
+      ],
+      "milestone": "v0.4 UX and Integrations",
+      "labels": [
+        "ux-and-integrations",
+        "export",
+        "feature",
+        "p0"
+      ],
+      "fields": {
+        "Status": "Todo",
+        "Priority": "P0",
+        "Phase": "UX and Integrations",
+        "Module": "Export",
+        "Work type": "Feature",
+        "Track": "Core product",
+        "Complexity": "M",
+        "Estimate": 4,
+        "Start date": "2026-10-19",
+        "Target date": "2026-10-25",
+        "Risk": "Medium",
+        "Version": "v0.4"
+      },
+      "body": "## Objective\nExport all session data to a spreadsheet-friendly CSV file.\n\n## Context\nCSV demonstrates data portability and enables analysis in Excel or LibreOffice.\n\n## Tasks\n- [ ] Write header row\n- [ ] Escape commas, quotes, and line breaks\n- [ ] Use UTF-8\n- [ ] Export dates in ISO-8601\n\n## Acceptance criteria\n- [ ] CSV opens correctly in LibreOffice\n- [ ] Quotes and multiline notes round-trip\n- [ ] Export does not modify database state\n\n## Files affected\n- `src/services/export_service.pas`\n- `tests/test_csv_export.pas`\n\n## Dependencies\nCKT-007\n\n## Risks\n- Spreadsheet locale may expect semicolon separators\n\n## Tests\n- Golden-file export test\n- Unicode test\n\n## Documentation\n- Document import settings for Excel and LibreOffice\n\n## Planning\n- Estimate: 4 hours\n- Priority: P0\n- Complexity: M\n- Risk: Medium\n- Start date: 2026-10-19\n- Target date: 2026-10-25\n- Milestone: v0.4 UX and Integrations\n"
+    },
+    {
+      "key": "CKT-015",
+      "title": "Implement SQL data export and backup",
+      "objective": "Export settings and sessions as transaction-safe SQL statements.",
+      "context": "A readable SQL export demonstrates database competence and provides a recovery path.",
+      "tasks": [
+        "Generate schema-independent INSERT statements",
+        "Escape SQL strings",
+        "Wrap export in a transaction",
+        "Include metadata comments"
+      ],
+      "acceptance": [
+        "Export can be imported into an empty compatible database",
+        "Single quotes are escaped",
+        "Output is deterministic"
+      ],
+      "files": [
+        "src/services/export_service.pas",
+        "tests/test_sql_export.pas"
+      ],
+      "depends_on": [
+        "CKT-007"
+      ],
+      "risks": [
+        "Malformed escaping could corrupt restores"
+      ],
+      "tests": [
+        "Import exported SQL into temporary database",
+        "Unicode and quote tests"
+      ],
+      "documentation": [
+        "Add backup and restore guide"
+      ],
+      "milestone": "v0.4 UX and Integrations",
+      "labels": [
+        "ux-and-integrations",
+        "export",
+        "feature",
+        "p1"
+      ],
+      "fields": {
+        "Status": "Todo",
+        "Priority": "P1",
+        "Phase": "UX and Integrations",
+        "Module": "Export",
+        "Work type": "Feature",
+        "Track": "Core product",
+        "Complexity": "M",
+        "Estimate": 4,
+        "Start date": "2026-10-26",
+        "Target date": "2026-11-01",
+        "Risk": "Medium",
+        "Version": "v0.4"
+      },
+      "body": "## Objective\nExport settings and sessions as transaction-safe SQL statements.\n\n## Context\nA readable SQL export demonstrates database competence and provides a recovery path.\n\n## Tasks\n- [ ] Generate schema-independent INSERT statements\n- [ ] Escape SQL strings\n- [ ] Wrap export in a transaction\n- [ ] Include metadata comments\n\n## Acceptance criteria\n- [ ] Export can be imported into an empty compatible database\n- [ ] Single quotes are escaped\n- [ ] Output is deterministic\n\n## Files affected\n- `src/services/export_service.pas`\n- `tests/test_sql_export.pas`\n\n## Dependencies\nCKT-007\n\n## Risks\n- Malformed escaping could corrupt restores\n\n## Tests\n- Import exported SQL into temporary database\n- Unicode and quote tests\n\n## Documentation\n- Add backup and restore guide\n\n## Planning\n- Estimate: 4 hours\n- Priority: P1\n- Complexity: M\n- Risk: Medium\n- Start date: 2026-10-26\n- Target date: 2026-11-01\n- Milestone: v0.4 UX and Integrations\n"
+    },
+    {
+      "key": "CKT-016",
+      "title": "Add local daily reminder behavior",
+      "objective": "Remind the user inside the desktop application when the daily goal is incomplete.",
+      "context": "The first release should remain dependency-light and avoid platform-specific daemons.",
+      "tasks": [
+        "Check progress at startup",
+        "Respect reminder setting",
+        "Avoid repeated messages in one session",
+        "Define extension point for OS notifications"
+      ],
+      "acceptance": [
+        "Reminder appears only when enabled and incomplete",
+        "Completed goal suppresses reminder",
+        "Application remains fully offline"
+      ],
+      "files": [
+        "src/services/reminder_service.pas",
+        "src/ui/main_form.pas"
+      ],
+      "depends_on": [
+        "CKT-008",
+        "CKT-011"
+      ],
+      "risks": [
+        "In-app reminders require the application to be opened"
+      ],
+      "tests": [
+        "Enabled/disabled test",
+        "Goal-complete test"
+      ],
+      "documentation": [
+        "Document reminder limitation"
+      ],
+      "milestone": "v0.4 UX and Integrations",
+      "labels": [
+        "ux-and-integrations",
+        "reminder",
+        "feature",
+        "p1"
+      ],
+      "fields": {
+        "Status": "Todo",
+        "Priority": "P1",
+        "Phase": "UX and Integrations",
+        "Module": "Reminder",
+        "Work type": "Feature",
+        "Track": "Core product",
+        "Complexity": "M",
+        "Estimate": 4,
+        "Start date": "2026-11-02",
+        "Target date": "2026-11-08",
+        "Risk": "Medium",
+        "Version": "v0.4"
+      },
+      "body": "## Objective\nRemind the user inside the desktop application when the daily goal is incomplete.\n\n## Context\nThe first release should remain dependency-light and avoid platform-specific daemons.\n\n## Tasks\n- [ ] Check progress at startup\n- [ ] Respect reminder setting\n- [ ] Avoid repeated messages in one session\n- [ ] Define extension point for OS notifications\n\n## Acceptance criteria\n- [ ] Reminder appears only when enabled and incomplete\n- [ ] Completed goal suppresses reminder\n- [ ] Application remains fully offline\n\n## Files affected\n- `src/services/reminder_service.pas`\n- `src/ui/main_form.pas`\n\n## Dependencies\nCKT-008, CKT-011\n\n## Risks\n- In-app reminders require the application to be opened\n\n## Tests\n- Enabled/disabled test\n- Goal-complete test\n\n## Documentation\n- Document reminder limitation\n\n## Planning\n- Estimate: 4 hours\n- Priority: P1\n- Complexity: M\n- Risk: Medium\n- Start date: 2026-11-02\n- Target date: 2026-11-08\n- Milestone: v0.4 UX and Integrations\n"
+    },
+    {
+      "key": "CKT-017",
+      "title": "Create automated unit test suite",
+      "objective": "Build repeatable tests for KPI calculations, validation, and export escaping.",
+      "context": "The portfolio objective requires evidence of correctness, not only working UI behavior.",
+      "tasks": [
+        "Configure FPCUnit runner",
+        "Add KPI tests",
+        "Add validation tests",
+        "Add export tests"
+      ],
+      "acceptance": [
+        "Tests run without opening GUI",
+        "Failure returns non-zero status",
+        "Critical formulas have boundary tests"
+      ],
+      "files": [
+        "tests/test_runner.lpr",
+        "tests/test_kpi_calculator.pas",
+        "tests/test_csv_export.pas"
+      ],
+      "depends_on": [
+        "CKT-009",
+        "CKT-014",
+        "CKT-015"
+      ],
+      "risks": [
+        "GUI code remains difficult to test directly"
+      ],
+      "tests": [
+        "Run complete test suite",
+        "Verify intentional failure"
+      ],
+      "documentation": [
+        "Document test commands"
+      ],
+      "milestone": "v0.5 Quality",
+      "labels": [
+        "quality",
+        "testing",
+        "test",
+        "p0"
+      ],
+      "fields": {
+        "Status": "Todo",
+        "Priority": "P0",
+        "Phase": "Quality",
+        "Module": "Testing",
+        "Work type": "Test",
+        "Track": "Quality",
+        "Complexity": "L",
+        "Estimate": 4,
+        "Start date": "2026-11-09",
+        "Target date": "2026-11-15",
+        "Risk": "Medium",
+        "Version": "v0.5"
+      },
+      "body": "## Objective\nBuild repeatable tests for KPI calculations, validation, and export escaping.\n\n## Context\nThe portfolio objective requires evidence of correctness, not only working UI behavior.\n\n## Tasks\n- [ ] Configure FPCUnit runner\n- [ ] Add KPI tests\n- [ ] Add validation tests\n- [ ] Add export tests\n\n## Acceptance criteria\n- [ ] Tests run without opening GUI\n- [ ] Failure returns non-zero status\n- [ ] Critical formulas have boundary tests\n\n## Files affected\n- `tests/test_runner.lpr`\n- `tests/test_kpi_calculator.pas`\n- `tests/test_csv_export.pas`\n\n## Dependencies\nCKT-009, CKT-014, CKT-015\n\n## Risks\n- GUI code remains difficult to test directly\n\n## Tests\n- Run complete test suite\n- Verify intentional failure\n\n## Documentation\n- Document test commands\n\n## Planning\n- Estimate: 4 hours\n- Priority: P0\n- Complexity: L\n- Risk: Medium\n- Start date: 2026-11-09\n- Target date: 2026-11-15\n- Milestone: v0.5 Quality\n"
+    },
+    {
+      "key": "CKT-018",
+      "title": "Add CI build and validation workflow",
+      "objective": "Validate formatting, JSON, tests, and Linux compilation on every change.",
+      "context": "Continuous integration makes repository quality visible to contributors and recruiters.",
+      "tasks": [
+        "Create GitHub Actions workflow",
+        "Install Free Pascal and Lazarus",
+        "Run validation and tests",
+        "Upload build artifact"
+      ],
+      "acceptance": [
+        "Workflow runs on push and pull request",
+        "Failures identify the failing stage",
+        "Permissions are read-only unless required"
+      ],
+      "files": [
+        ".github/workflows/ci.yml",
+        "scripts/validate.sh",
+        "scripts/build.sh"
+      ],
+      "depends_on": [
+        "CKT-017",
+        "CKT-004"
+      ],
+      "risks": [
+        "Lazarus package names differ between runner images"
+      ],
+      "tests": [
+        "Validate workflow YAML",
+        "Run workflow on feature branch"
+      ],
+      "documentation": [
+        "Add CI badge"
+      ],
+      "milestone": "v0.5 Quality",
+      "labels": [
+        "quality",
+        "ci",
+        "ci",
+        "p0"
+      ],
+      "fields": {
+        "Status": "Todo",
+        "Priority": "P0",
+        "Phase": "Quality",
+        "Module": "CI",
+        "Work type": "CI",
+        "Track": "Quality",
+        "Complexity": "L",
+        "Estimate": 4,
+        "Start date": "2026-11-16",
+        "Target date": "2026-11-22",
+        "Risk": "Medium",
+        "Version": "v0.5"
+      },
+      "body": "## Objective\nValidate formatting, JSON, tests, and Linux compilation on every change.\n\n## Context\nContinuous integration makes repository quality visible to contributors and recruiters.\n\n## Tasks\n- [ ] Create GitHub Actions workflow\n- [ ] Install Free Pascal and Lazarus\n- [ ] Run validation and tests\n- [ ] Upload build artifact\n\n## Acceptance criteria\n- [ ] Workflow runs on push and pull request\n- [ ] Failures identify the failing stage\n- [ ] Permissions are read-only unless required\n\n## Files affected\n- `.github/workflows/ci.yml`\n- `scripts/validate.sh`\n- `scripts/build.sh`\n\n## Dependencies\nCKT-017, CKT-004\n\n## Risks\n- Lazarus package names differ between runner images\n\n## Tests\n- Validate workflow YAML\n- Run workflow on feature branch\n\n## Documentation\n- Add CI badge\n\n## Planning\n- Estimate: 4 hours\n- Priority: P0\n- Complexity: L\n- Risk: Medium\n- Start date: 2026-11-16\n- Target date: 2026-11-22\n- Milestone: v0.5 Quality\n"
+    },
+    {
+      "key": "CKT-019",
+      "title": "Harden input, database, and file handling",
+      "objective": "Review attack surface and protect local data from malformed input and unsafe file operations.",
+      "context": "Although local-first, the application handles user-controlled text and export paths.",
+      "tasks": [
+        "Verify all SQL is parameterized",
+        "Validate export paths and overwrite confirmation",
+        "Set sensible file permissions where supported",
+        "Document threat model"
+      ],
+      "acceptance": [
+        "No user text is concatenated into SQL",
+        "Exports require explicit destination",
+        "Threat model covers local and supply-chain risks"
+      ],
+      "files": [
+        "docs/security.md",
+        "src/data/kpi_database.pas",
+        "src/services/export_service.pas"
+      ],
+      "depends_on": [
+        "CKT-007",
+        "CKT-014",
+        "CKT-015"
+      ],
+      "risks": [
+        "Cross-platform permission behavior is inconsistent"
+      ],
+      "tests": [
+        "Static review",
+        "Malformed-input tests",
+        "Path edge-case tests"
+      ],
+      "documentation": [
+        "Publish security policy"
+      ],
+      "milestone": "v0.5 Quality",
+      "labels": [
+        "quality",
+        "security",
+        "security",
+        "p0"
+      ],
+      "fields": {
+        "Status": "Todo",
+        "Priority": "P0",
+        "Phase": "Quality",
+        "Module": "Security",
+        "Work type": "Security",
+        "Track": "Quality",
+        "Complexity": "M",
+        "Estimate": 4,
+        "Start date": "2026-11-23",
+        "Target date": "2026-11-29",
+        "Risk": "High",
+        "Version": "v0.5"
+      },
+      "body": "## Objective\nReview attack surface and protect local data from malformed input and unsafe file operations.\n\n## Context\nAlthough local-first, the application handles user-controlled text and export paths.\n\n## Tasks\n- [ ] Verify all SQL is parameterized\n- [ ] Validate export paths and overwrite confirmation\n- [ ] Set sensible file permissions where supported\n- [ ] Document threat model\n\n## Acceptance criteria\n- [ ] No user text is concatenated into SQL\n- [ ] Exports require explicit destination\n- [ ] Threat model covers local and supply-chain risks\n\n## Files affected\n- `docs/security.md`\n- `src/data/kpi_database.pas`\n- `src/services/export_service.pas`\n\n## Dependencies\nCKT-007, CKT-014, CKT-015\n\n## Risks\n- Cross-platform permission behavior is inconsistent\n\n## Tests\n- Static review\n- Malformed-input tests\n- Path edge-case tests\n\n## Documentation\n- Publish security policy\n\n## Planning\n- Estimate: 4 hours\n- Priority: P0\n- Complexity: M\n- Risk: High\n- Start date: 2026-11-23\n- Target date: 2026-11-29\n- Milestone: v0.5 Quality\n"
+    },
+    {
+      "key": "CKT-020",
+      "title": "Profile startup and large-history performance",
+      "objective": "Measure startup, dashboard refresh, and export performance with realistic history sizes.",
+      "context": "Performance evidence supports scalability claims and prevents unnecessary optimization.",
+      "tasks": [
+        "Generate benchmark dataset",
+        "Measure 1k, 10k, and 100k sessions",
+        "Add relevant indexes",
+        "Record results and environment"
+      ],
+      "acceptance": [
+        "Dashboard target is defined and measured",
+        "No unbounded UI loading",
+        "Optimizations are justified by measurements"
+      ],
+      "files": [
+        "benchmarks/generate_data.pas",
+        "docs/performance.md",
+        "src/data/kpi_database.pas"
+      ],
+      "depends_on": [
+        "CKT-011",
+        "CKT-014"
+      ],
+      "risks": [
+        "Synthetic data may not represent real usage"
+      ],
+      "tests": [
+        "Repeat benchmark three times",
+        "Compare before and after indexes"
+      ],
+      "documentation": [
+        "Publish benchmark table"
+      ],
+      "milestone": "v0.5 Quality",
+      "labels": [
+        "quality",
+        "performance",
+        "performance",
+        "p1"
+      ],
+      "fields": {
+        "Status": "Todo",
+        "Priority": "P1",
+        "Phase": "Quality",
+        "Module": "Performance",
+        "Work type": "Performance",
+        "Track": "Quality",
+        "Complexity": "M",
+        "Estimate": 4,
+        "Start date": "2026-11-30",
+        "Target date": "2026-12-06",
+        "Risk": "Medium",
+        "Version": "v0.5"
+      },
+      "body": "## Objective\nMeasure startup, dashboard refresh, and export performance with realistic history sizes.\n\n## Context\nPerformance evidence supports scalability claims and prevents unnecessary optimization.\n\n## Tasks\n- [ ] Generate benchmark dataset\n- [ ] Measure 1k, 10k, and 100k sessions\n- [ ] Add relevant indexes\n- [ ] Record results and environment\n\n## Acceptance criteria\n- [ ] Dashboard target is defined and measured\n- [ ] No unbounded UI loading\n- [ ] Optimizations are justified by measurements\n\n## Files affected\n- `benchmarks/generate_data.pas`\n- `docs/performance.md`\n- `src/data/kpi_database.pas`\n\n## Dependencies\nCKT-011, CKT-014\n\n## Risks\n- Synthetic data may not represent real usage\n\n## Tests\n- Repeat benchmark three times\n- Compare before and after indexes\n\n## Documentation\n- Publish benchmark table\n\n## Planning\n- Estimate: 4 hours\n- Priority: P1\n- Complexity: M\n- Risk: Medium\n- Start date: 2026-11-30\n- Target date: 2026-12-06\n- Milestone: v0.5 Quality\n"
+    },
+    {
+      "key": "CKT-021",
+      "title": "Write complete user and developer documentation",
+      "objective": "Create installation, usage, architecture, database, export, testing, and troubleshooting documentation.",
+      "context": "The project targets beginners and recruiters, so operational clarity is part of the product.",
+      "tasks": [
+        "Write user guide",
+        "Write developer setup",
+        "Document database and exports",
+        "Add troubleshooting matrix"
+      ],
+      "acceptance": [
+        "New user can build and record a session",
+        "Developer can run tests",
+        "Known limitations are explicit"
+      ],
+      "files": [
+        "README.md",
+        "docs/user-guide.md",
+        "docs/developer-guide.md",
+        "docs/troubleshooting.md"
+      ],
+      "depends_on": [
+        "CKT-018",
+        "CKT-019"
+      ],
+      "risks": [
+        "Documentation can drift from implementation"
+      ],
+      "tests": [
+        "Follow docs on a clean environment"
+      ],
+      "documentation": [
+        "Link every guide from README"
+      ],
+      "milestone": "v1.0 Release",
+      "labels": [
+        "release",
+        "documentation",
+        "documentation",
+        "p0"
+      ],
+      "fields": {
+        "Status": "Todo",
+        "Priority": "P0",
+        "Phase": "Release",
+        "Module": "Documentation",
+        "Work type": "Documentation",
+        "Track": "Release",
+        "Complexity": "L",
+        "Estimate": 4,
+        "Start date": "2026-12-07",
+        "Target date": "2026-12-13",
+        "Risk": "Low",
+        "Version": "v1.0"
+      },
+      "body": "## Objective\nCreate installation, usage, architecture, database, export, testing, and troubleshooting documentation.\n\n## Context\nThe project targets beginners and recruiters, so operational clarity is part of the product.\n\n## Tasks\n- [ ] Write user guide\n- [ ] Write developer setup\n- [ ] Document database and exports\n- [ ] Add troubleshooting matrix\n\n## Acceptance criteria\n- [ ] New user can build and record a session\n- [ ] Developer can run tests\n- [ ] Known limitations are explicit\n\n## Files affected\n- `README.md`\n- `docs/user-guide.md`\n- `docs/developer-guide.md`\n- `docs/troubleshooting.md`\n\n## Dependencies\nCKT-018, CKT-019\n\n## Risks\n- Documentation can drift from implementation\n\n## Tests\n- Follow docs on a clean environment\n\n## Documentation\n- Link every guide from README\n\n## Planning\n- Estimate: 4 hours\n- Priority: P0\n- Complexity: L\n- Risk: Low\n- Start date: 2026-12-07\n- Target date: 2026-12-13\n- Milestone: v1.0 Release\n"
+    },
+    {
+      "key": "CKT-022",
+      "title": "Create sample datasets and portfolio examples",
+      "objective": "Provide realistic CSV and SQL examples plus screenshots for portfolio review.",
+      "context": "Examples make the database, spreadsheet, and KPI capabilities immediately visible.",
+      "tasks": [
+        "Create anonymized sample sessions",
+        "Export CSV and SQL examples",
+        "Create dashboard screenshot guide",
+        "Explain analytical questions recruiters can evaluate"
+      ],
+      "acceptance": [
+        "Examples contain no personal data",
+        "CSV and SQL match current schema",
+        "README links to examples"
+      ],
+      "files": [
+        "examples/sample_sessions.csv",
+        "examples/sample_backup.sql",
+        "docs/portfolio-demo.md"
+      ],
+      "depends_on": [
+        "CKT-014",
+        "CKT-015",
+        "CKT-021"
+      ],
+      "risks": [
+        "Examples may become stale after schema changes"
+      ],
+      "tests": [
+        "Import sample data",
+        "Validate exported examples"
+      ],
+      "documentation": [
+        "Add portfolio demonstration script"
+      ],
+      "milestone": "v1.0 Release",
+      "labels": [
+        "release",
+        "examples",
+        "documentation",
+        "p1"
+      ],
+      "fields": {
+        "Status": "Todo",
+        "Priority": "P1",
+        "Phase": "Release",
+        "Module": "Examples",
+        "Work type": "Documentation",
+        "Track": "Release",
+        "Complexity": "M",
+        "Estimate": 4,
+        "Start date": "2026-12-14",
+        "Target date": "2026-12-20",
+        "Risk": "Low",
+        "Version": "v1.0"
+      },
+      "body": "## Objective\nProvide realistic CSV and SQL examples plus screenshots for portfolio review.\n\n## Context\nExamples make the database, spreadsheet, and KPI capabilities immediately visible.\n\n## Tasks\n- [ ] Create anonymized sample sessions\n- [ ] Export CSV and SQL examples\n- [ ] Create dashboard screenshot guide\n- [ ] Explain analytical questions recruiters can evaluate\n\n## Acceptance criteria\n- [ ] Examples contain no personal data\n- [ ] CSV and SQL match current schema\n- [ ] README links to examples\n\n## Files affected\n- `examples/sample_sessions.csv`\n- `examples/sample_backup.sql`\n- `docs/portfolio-demo.md`\n\n## Dependencies\nCKT-014, CKT-015, CKT-021\n\n## Risks\n- Examples may become stale after schema changes\n\n## Tests\n- Import sample data\n- Validate exported examples\n\n## Documentation\n- Add portfolio demonstration script\n\n## Planning\n- Estimate: 4 hours\n- Priority: P1\n- Complexity: M\n- Risk: Low\n- Start date: 2026-12-14\n- Target date: 2026-12-20\n- Milestone: v1.0 Release\n"
+    },
+    {
+      "key": "CKT-023",
+      "title": "Prepare cross-platform release builds",
+      "objective": "Produce documented Linux, Windows, and macOS desktop build procedures and checksums.",
+      "context": "Cross-platform support is a core project promise but requires platform-specific validation.",
+      "tasks": [
+        "Define build matrix",
+        "Create release packaging scripts",
+        "Generate checksums",
+        "Document code-signing limitations"
+      ],
+      "acceptance": [
+        "Linux binary is built in CI",
+        "Windows and macOS procedures are reproducible",
+        "Artifacts include version and checksum"
+      ],
+      "files": [
+        "scripts/package-release.sh",
+        ".github/workflows/release.yml",
+        "docs/releasing.md"
+      ],
+      "depends_on": [
+        "CKT-018",
+        "CKT-021"
+      ],
+      "risks": [
+        "macOS signing requires Apple credentials",
+        "Cross-compilation may not match native builds"
+      ],
+      "tests": [
+        "Launch artifact on each supported OS",
+        "Verify clean install"
+      ],
+      "documentation": [
+        "Publish release checklist"
+      ],
+      "milestone": "v1.0 Release",
+      "labels": [
+        "release",
+        "release",
+        "release",
+        "p0"
+      ],
+      "fields": {
+        "Status": "Todo",
+        "Priority": "P0",
+        "Phase": "Release",
+        "Module": "Release",
+        "Work type": "Release",
+        "Track": "Release",
+        "Complexity": "L",
+        "Estimate": 4,
+        "Start date": "2026-12-21",
+        "Target date": "2026-12-27",
+        "Risk": "High",
+        "Version": "v1.0"
+      },
+      "body": "## Objective\nProduce documented Linux, Windows, and macOS desktop build procedures and checksums.\n\n## Context\nCross-platform support is a core project promise but requires platform-specific validation.\n\n## Tasks\n- [ ] Define build matrix\n- [ ] Create release packaging scripts\n- [ ] Generate checksums\n- [ ] Document code-signing limitations\n\n## Acceptance criteria\n- [ ] Linux binary is built in CI\n- [ ] Windows and macOS procedures are reproducible\n- [ ] Artifacts include version and checksum\n\n## Files affected\n- `scripts/package-release.sh`\n- `.github/workflows/release.yml`\n- `docs/releasing.md`\n\n## Dependencies\nCKT-018, CKT-021\n\n## Risks\n- macOS signing requires Apple credentials\n- Cross-compilation may not match native builds\n\n## Tests\n- Launch artifact on each supported OS\n- Verify clean install\n\n## Documentation\n- Publish release checklist\n\n## Planning\n- Estimate: 4 hours\n- Priority: P0\n- Complexity: L\n- Risk: High\n- Start date: 2026-12-21\n- Target date: 2026-12-27\n- Milestone: v1.0 Release\n"
+    },
+    {
+      "key": "CKT-024",
+      "title": "Execute v1.0 release readiness review",
+      "objective": "Run the final quality gate and publish version 1.0.0 when all mandatory criteria pass.",
+      "context": "A disciplined release demonstrates maintainability, traceability, and professional ownership.",
+      "tasks": [
+        "Review all P0 issues",
+        "Run tests and security checklist",
+        "Verify documentation and examples",
+        "Create changelog and release notes",
+        "Tag v1.0.0"
+      ],
+      "acceptance": [
+        "No open Critical or High release blockers",
+        "CI is green",
+        "Fresh-install smoke test passes",
+        "Release notes list limitations"
+      ],
+      "files": [
+        "CHANGELOG.md",
+        "docs/release-checklist.md",
+        "README.md"
+      ],
+      "depends_on": [
+        "CKT-019",
+        "CKT-021",
+        "CKT-022",
+        "CKT-023"
+      ],
+      "risks": [
+        "Unverified platforms can invalidate release claims"
+      ],
+      "tests": [
+        "Full regression test",
+        "Fresh database test",
+        "Upgrade-path test"
+      ],
+      "documentation": [
+        "Publish release notes and known limitations"
+      ],
+      "milestone": "v1.0 Release",
+      "labels": [
+        "release",
+        "release",
+        "release",
+        "p0"
+      ],
+      "fields": {
+        "Status": "Todo",
+        "Priority": "P0",
+        "Phase": "Release",
+        "Module": "Release",
+        "Work type": "Release",
+        "Track": "Release",
+        "Complexity": "M",
+        "Estimate": 4,
+        "Start date": "2026-12-28",
+        "Target date": "2027-01-03",
+        "Risk": "High",
+        "Version": "v1.0"
+      },
+      "body": "## Objective\nRun the final quality gate and publish version 1.0.0 when all mandatory criteria pass.\n\n## Context\nA disciplined release demonstrates maintainability, traceability, and professional ownership.\n\n## Tasks\n- [ ] Review all P0 issues\n- [ ] Run tests and security checklist\n- [ ] Verify documentation and examples\n- [ ] Create changelog and release notes\n- [ ] Tag v1.0.0\n\n## Acceptance criteria\n- [ ] No open Critical or High release blockers\n- [ ] CI is green\n- [ ] Fresh-install smoke test passes\n- [ ] Release notes list limitations\n\n## Files affected\n- `CHANGELOG.md`\n- `docs/release-checklist.md`\n- `README.md`\n\n## Dependencies\nCKT-019, CKT-021, CKT-022, CKT-023\n\n## Risks\n- Unverified platforms can invalidate release claims\n\n## Tests\n- Full regression test\n- Fresh database test\n- Upgrade-path test\n\n## Documentation\n- Publish release notes and known limitations\n\n## Planning\n- Estimate: 4 hours\n- Priority: P0\n- Complexity: M\n- Risk: High\n- Start date: 2026-12-28\n- Target date: 2027-01-03\n- Milestone: v1.0 Release\n"
+    }
+  ]
+}

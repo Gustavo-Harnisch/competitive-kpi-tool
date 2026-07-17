@@ -1,0 +1,14 @@
+{
+  "format_version": 1,
+  "builder_version": "1.0.0",
+  "created_at_utc": "2026-07-16T22:38:06.930219+00:00",
+  "github_repository": "Gustavo-Harnisch/competitive-kpi-tool",
+  "files": [
+    {
+      "role": "repository_zip",
+      "path": "attachments/competitive-kpi-tool-2026-07-16.zip",
+      "size_bytes": 1480,
+      "sha256": "3ad01129400c6bc32b9b9c0696a8b75440f4e1f4521661d61156b02bb6370318"
+    }
+  ]
+}
