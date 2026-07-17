@@ -32,6 +32,20 @@ On Linux, after installing Lazarus:
 
 The database is created in the operating system's per-user application configuration directory under `competitive-kpi-tool/competitive_kpi.sqlite3`. No network connection is required.
 
+## Backup example
+
+The file `examples/sample_backup.sql` is a sample backup for **SQLite**. It can be applied with tools such as `sqlite3` or DB Browser for SQLite.
+
+The sample schema uses `id INTEGER PRIMARY KEY`. In SQLite this already auto-generates integer IDs when the application inserts a row without an explicit `id`, and it avoids false syntax errors from tools that validate the file as generic SQL instead of SQLite SQL.
+
+Example with the SQLite command-line tool:
+
+```bash
+sqlite3 competitive_kpi.sqlite3 < examples/sample_backup.sql
+```
+
+This SQL file is not intended for MySQL, PostgreSQL, SQL Server, or Oracle without adapting the syntax.
+
 ## Automation
 
 See [`automation-package/README.md`](automation-package/README.md). The source of truth for repository planning is `automation-package/planning/project.json`.

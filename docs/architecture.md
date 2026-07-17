@@ -16,7 +16,7 @@ The UI may orchestrate operations but must not construct SQL. The data layer may
 ## Modules
 
 | Module | Responsibility | Main files | Dependencies | Errors | Tests |
-|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- |
 | Application bootstrap | Initialize LCL and main form | `src/competitive_kpi_tool.lpr` | LCL | Startup exception | Manual smoke test |
 | Application paths | Resolve per-user data paths | `src/core/app_paths.pas` | RTL | Directory creation failure | Platform path test |
 | Domain types | Stable session and KPI records | `src/core/kpi_types.pas` | RTL | Invalid record values handled by callers | Compilation and validation tests |

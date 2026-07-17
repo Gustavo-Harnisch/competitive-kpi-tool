@@ -5,7 +5,7 @@
 The inspected attachment contained only `project_config.json` and `project_config.example.json`. It did not contain Object Pascal source code, Lazarus project files, tests, workflows, database schema, documentation, or build scripts. Therefore no existing application could be compiled, executed, or migrated.
 
 | Component | State | Problem | Severity | Consequence | Action |
-|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- |
 | Application source | Missing | No `.pas`, `.lpr`, `.lpi`, or `.lfm` files | Critical | There is no runnable product | Create a minimal vertical slice and layered structure |
 | Database | Missing | No schema, migration, or access layer | High | KPIs cannot be persisted or audited | Implement SQLite schema and parameterized repository |
 | KPI definitions | Missing | Formulas and streak semantics are undefined | High | Different implementations may disagree | Publish a KPI specification before extending calculations |

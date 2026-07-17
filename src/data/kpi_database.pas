@@ -101,7 +101,7 @@ begin
       'INSERT OR IGNORE INTO settings(id, daily_goal, reminder_enabled) VALUES (1, 3, 1);');
     FConnection.ExecuteDirect(
       'CREATE TABLE IF NOT EXISTS practice_sessions (' +
-      'id INTEGER PRIMARY KEY AUTOINCREMENT, ' +
+      'id INTEGER PRIMARY KEY, ' +
       'practiced_on TEXT NOT NULL, ' +
       'platform TEXT NOT NULL CHECK (length(platform) BETWEEN 1 AND 80), ' +
       'problems_solved INTEGER NOT NULL CHECK (problems_solved >= 0), ' +

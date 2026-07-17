@@ -3,7 +3,7 @@
 The roadmap assumes four focused hours per week. Each issue is intentionally sized as a weekly learning and implementation unit. Dependencies are recorded in `automation-package/planning/project.json`.
 
 | ID | Issue | Phase | Milestone | Priority | Estimate | Start | Target |
-|---|---|---|---|---|---:|---|---|
+| --- | --- | --- | --- | --- | ---: | --- | --- |
 | CKT-001 | Define product requirements and KPI semantics | Foundation | v0.1 Foundation | P0 | 4h | 2026-07-20 | 2026-07-26 |
 | CKT-002 | Create repository standards and contribution policy | Foundation | v0.1 Foundation | P0 | 4h | 2026-07-27 | 2026-08-02 |
 | CKT-003 | Design layered application architecture | Architecture | v0.1 Foundation | P0 | 4h | 2026-08-03 | 2026-08-09 |
